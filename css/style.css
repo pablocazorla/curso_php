@@ -1,0 +1,8 @@
+body{background-color: #EEE}
+.main-header,
+.main-article{border-bottom: 1px #CCC solid;background-color: #FFF}
+
+
+.main-article{border: 1px #CCC solid;padding-top: 30px;padding-bottom: 30px;min-height: 400px}
+
+.brand{float: left;font-size: 20px;line-height: 50px;color: #999}
