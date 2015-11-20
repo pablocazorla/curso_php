@@ -1,8 +1,21 @@
-body{background-color: #EEE}
-.main-header,
-.main-article{border-bottom: 1px #CCC solid;background-color: #FFF}
-
-
-.main-article{border: 1px #CCC solid;padding-top: 30px;padding-bottom: 30px;min-height: 400px}
-
-.brand{float: left;font-size: 20px;line-height: 50px;color: #999}
+#nav-cont a{
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	width: 30px;
+	text-align: center;
+	margin: 5px;
+	background-color: #EEE;
+}
+#nav-cont a.current{
+	background-color: #29f;
+	color: #FFF;
+}
+#nav-cont a:hover{
+	background-color: #222;
+	color: #FFF;
+	text-decoration: none;
+}
+pre{
+	padding: 10px;
+}

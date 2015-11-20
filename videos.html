@@ -1,0 +1,138 @@
+<!doctype HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Curso PHP - Videos</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	
+	<!-- CSS -->
+	<link type="text/css" rel="stylesheet" href="common/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="common/css/bootstrap-theme.min.css">
+	<link type="text/css" rel="stylesheet" href="common/css/style.css">
+
+
+</head>
+<body>
+	
+		<h1>Curso PHP - Videos</h1>
+		<nav id="nav-cont"></nav>
+		<input type="hidden" id="mem-input" value="0"/>
+		<div id="vid-cont">
+			<iframe width="100%" src="" frameborder="0" allowfullscreen></iframe>
+		</div>
+	<script type="text/javascript" src="common/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+	var videoList = [
+			'vyweNOQzRsM',
+			'vg8cGhAQ-DE',
+			'AFNTYuSVSYc',
+			'GlLXRcthvuc',
+			'VN3Get_iYMQ',
+			'Jj9Bi0G21Cw',
+			'T4wAr-lNb7U',
+			'pe6lVf9fdc0',
+			'bBeLqPkni4o',
+			'zQ4vAFIWOBU',
+			'Lvs22ir7ODc',
+			'ulsp7R1vMgs',
+			'i1IiY_44Hfo',
+			'EV848TBuIxY',
+			'Y87ZOGKqXTc',
+			'03sNwC4ayhU',
+			'1y_eozqpc7o',
+			'Nsw9EDCOyfA',
+			'0MBYyrgYjOM',
+			'CCyAWsDu4MQ',
+			'pe01QHfMs_w',
+			't5DbKPOh2OU',
+			'M2Yndhw48Jw',
+			'FYgGEXTglYk',
+			'voNOQjjLo-o',
+			'ihttezP7S-M',
+			'S9rbXvELMOw',
+			'McHnRSRj3ks',
+			'aQX3z3Cf4TE',
+			'tXPuiEwRdvo',
+			'mdOCg5P1xVI',
+			'oNcInlnTMaY',
+			'WS4SK1R4o2I',
+			'WkX_h13STlo',
+			'mIms-w0cgMw',
+			'acnUH7xTk4s',
+			'kQ5J6vKnj5c',
+			'ln9LvkdKNZk',
+			'De2wE5PBIh8',
+			'6tM4ijwnpRY',
+			'FHS4e7kSu6A',
+			'u68t1QjvCV4',
+			'YuEr-yGbNTQ',
+			'TOMYXzL4sE4',
+			'rrXLMvuiAus',
+			'H85A-9QAxes',
+			'Y4aN7Aqi2Eg',
+			'j3bm8goBdvI',
+			'3ik8IJZ821Q',
+			'zxel1N-U4ms',
+			'qtiASrnjyr0',
+			'IL2YfoSpiiU',
+			'4i_DwIPJNqY',
+			'x_v4NQuoZwk',
+			'xJZ79ocqOCw',
+			'iI91tAiwx-I',
+			'WhuRilScuCE',
+			'MFVoQuvIuuA',
+			'fMlHMMa34b8',
+			'PVdqrlo60Q8',
+			'BT-hyW-MWIs',
+			'0sbtwO8ZW-U',
+			'aN270YxzHYY',
+			'kefA18NJSeY',
+			'0zpVCZOqjlM',
+			'JBQiP0j_kVU',
+			'cTI2C4TNBJU',
+			'RqCSU-w9dl0',
+			'og60ARgWp30',
+			'j1zcJ28ZMr4'
+		];
+	$('document').ready(function(){
+		var $window = $(window),
+				$nav = $('#nav-cont'),
+				$vid = $('#vid-cont'),
+				$mem = $('#mem-input'),
+				current = parseInt($mem.val()),
+				$iframe = $vid.find('iframe'),
+				l = videoList.length;
+
+		for(var i = 0; i< l; i++){
+			$('<a href="'+videoList[i]+'">'+ (i+1) +'</a>').appendTo($nav);
+		}
+
+		var resize = function(){
+			var w = $window.width(),
+				h = .75 * w;
+				$iframe.width(w).height(h);
+		}
+		resize();
+		$window.resize(resize);
+
+		var $a = $nav.find('a');
+
+		$a.each(function(index){
+			var $this = $(this);
+			$this.click(function(e){
+				$a.removeClass('current');
+				e.preventDefault();
+				var h = $(this).addClass('current').attr('href');
+				$iframe.attr('src','https://www.youtube.com/embed/'+h);
+				$mem.val(index);
+			});
+		});
+		$a.eq(current).click();
+	});
+	</script>
+</body>
+</html>
